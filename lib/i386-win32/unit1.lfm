@@ -1,0 +1,213 @@
+object Form1: TForm1
+  Left = 579
+  Height = 439
+  Top = 162
+  Width = 573
+  BorderStyle = bsSingle
+  Caption = 'Сборщик ZFC и ZMD файлов'
+  ClientHeight = 439
+  ClientWidth = 573
+  Position = poDesktopCenter
+  LCLVersion = '2.2.4.0'
+  object GroupBox1: TGroupBox
+    Left = 176
+    Height = 48
+    Top = 8
+    Width = 384
+    Caption = 'Название игры (только ENG)'
+    ClientHeight = 28
+    ClientWidth = 380
+    TabOrder = 0
+    object Edit_Name_Game: TEdit
+      Left = 8
+      Height = 23
+      Top = 0
+      Width = 368
+      TabOrder = 0
+    end
+  end
+  object GroupBox2: TGroupBox
+    Left = 176
+    Height = 49
+    Top = 64
+    Width = 384
+    Caption = 'ROM файл игры'
+    ClientHeight = 29
+    ClientWidth = 380
+    TabOrder = 1
+    object Edit_Path_Rom: TEdit
+      Left = 8
+      Height = 23
+      Top = 0
+      Width = 288
+      TabOrder = 0
+    end
+    object Button_Select_Rom: TButton
+      Left = 301
+      Height = 25
+      Top = 0
+      Width = 75
+      Caption = 'Обзор'
+      OnClick = Button_Select_RomClick
+      TabOrder = 1
+    end
+  end
+  object GroupBox3: TGroupBox
+    Left = 176
+    Height = 103
+    Top = 120
+    Width = 384
+    Caption = 'Превьюшка 144х208'
+    ClientHeight = 83
+    ClientWidth = 380
+    TabOrder = 2
+    object Button_Load_Preview_From_Console_File: TButton
+      Left = 8
+      Height = 32
+      Top = 0
+      Width = 368
+      Caption = 'Получить с файла консоли (ZFC, ZMD)'
+      OnClick = Button_Load_Preview_From_Console_FileClick
+      TabOrder = 0
+    end
+    object Button_Select_Preview: TButton
+      Left = 8
+      Height = 32
+      Top = 48
+      Width = 368
+      Caption = 'Или выбрать свою'
+      OnClick = Button_Select_PreviewClick
+      TabOrder = 1
+    end
+  end
+  object GroupBox4: TGroupBox
+    Left = 16
+    Height = 72
+    Top = 232
+    Width = 544
+    Caption = 'Собрать файл с расширением'
+    ClientHeight = 52
+    ClientWidth = 540
+    TabOrder = 3
+    object RadioButton_zfc: TRadioButton
+      Left = 8
+      Height = 19
+      Top = 0
+      Width = 41
+      Caption = 'ZFC'
+      OnChange = RadioButton_zfcChange
+      TabOrder = 2
+    end
+    object RadioButton_zmd: TRadioButton
+      Left = 8
+      Height = 19
+      Top = 24
+      Width = 46
+      Caption = 'ZMD'
+      OnChange = RadioButton_zmdChange
+      TabOrder = 0
+    end
+    object Button_build_file: TButton
+      Left = 224
+      Height = 48
+      Top = 0
+      Width = 312
+      Caption = 'Собрать файл игры для консоли'
+      OnClick = Button_build_fileClick
+      TabOrder = 1
+    end
+    object Edit_zmd_zfc: TEdit
+      Left = 80
+      Height = 23
+      Top = 20
+      Width = 100
+      TabOrder = 3
+    end
+    object Label2: TLabel
+      Left = 80
+      Height = 15
+      Top = 0
+      Width = 98
+      Caption = 'Или свой формат'
+      ParentColor = False
+    end
+  end
+  object GroupBox5: TGroupBox
+    Left = 16
+    Height = 88
+    Top = 304
+    Width = 544
+    ClientHeight = 68
+    ClientWidth = 540
+    TabOrder = 4
+    object Button_Save_Preview: TButton
+      Left = 8
+      Height = 33
+      Top = 24
+      Width = 250
+      Caption = 'Save Preview'
+      OnClick = Button_Save_PreviewClick
+      TabOrder = 0
+    end
+    object Button_Save_Zip: TButton
+      Left = 286
+      Height = 33
+      Top = 24
+      Width = 250
+      Caption = 'Save ZIP'
+      OnClick = Button_Save_ZipClick
+      TabOrder = 1
+    end
+    object Label3: TLabel
+      Left = 16
+      Height = 15
+      Top = 0
+      Width = 225
+      Caption = 'Получить превьюшку из файла консоли'
+      ParentColor = False
+    end
+    object Label4: TLabel
+      Left = 304
+      Height = 15
+      Top = 0
+      Width = 209
+      Caption = 'Получить zip архив из файла консоли'
+      ParentColor = False
+    end
+  end
+  object PaintBox_Preview: TPaintBox
+    Left = 16
+    Height = 208
+    Top = 8
+    Width = 144
+  end
+  object Label_link_home: TLabel
+    Left = 16
+    Height = 30
+    Top = 400
+    Width = 284
+    Caption = 'Новые версии программы можно скачать от сюда:'#13#10'https://github.com/Galavarez/DataFrog_Zfc_Zmd'
+    ParentColor = False
+    OnClick = Label_link_homeClick
+  end
+  object OpenDialog_Zfc_Zmd: TOpenDialog
+    Filter = 'Game file|*.zfc; *.zmd|Все файлы|*.*'
+    Left = 192
+    Top = 136
+  end
+  object OpenDialog_Select_Preview: TOpenDialog
+    Filter = 'Картинка|*.bmp; *.jpg; *.png; *.tif|Все файлы|*.*'
+    Left = 512
+    Top = 192
+  end
+  object OpenDialog_Rom: TOpenDialog
+    Filter = 'Rom|*.nes; *.bin; *.nfc; *.md|Все файлы|*.*'
+    Left = 424
+    Top = 80
+  end
+  object OpenDialog_Console_File: TOpenDialog
+    Filter = 'Game file|*.zfc; *.zmd|Все файлы|*.*'
+    Left = 272
+    Top = 328
+  end
+end
