@@ -25,3 +25,12 @@
 
 3 часть не совсем часть то все же, это как отображается имя игры в консоле.<br>
 Тут все просто оно берется из названия файла ZFC или ZMD.<br>
+
+
+**Литература для понимания формата:**
+
+Структура PKZip файла <br>
+https://users.cs.jmu.edu/buchhofp/forensics/formats/pkzip.html
+
+XOR шифр <br>
+https://www.dcode.fr/xor-cipher
